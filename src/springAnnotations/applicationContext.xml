@@ -10,5 +10,6 @@
 	<!-- add antry to enable component scanner -->
 	
 	<context:component-scan base-package="springAnnotations"></context:component-scan>
+	<context:property-placeholder location="classpath:springAnnotations/sport.properties"/>
 
 </beans>

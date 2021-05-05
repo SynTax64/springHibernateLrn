@@ -6,8 +6,11 @@ public class AnnotationsDemoApp {
 	public static void main(String[] args) {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
 				"springAnnotations/applicationContext.xml");
-		Coach tennisCoach = context.getBean("tennisCoach", Coach.class);
-		System.out.println(tennisCoach.getDailyWorkout());
+
+		Coach theCoach = context.getBean("pingPongCoach", Coach.class);
+
+		System.out.println(theCoach.getDailyWorkout());
+		System.out.println(theCoach.getDailyFortune());
 
 		context.close();
 	}

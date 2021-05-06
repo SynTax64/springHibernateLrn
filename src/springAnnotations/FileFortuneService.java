@@ -4,11 +4,12 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -20,7 +21,8 @@ public class FileFortuneService implements FortuneService {
 
 	public FileFortuneService() {
 
-		File theFile = new File("src/springAnnotations/fortune-data.txt");
+		Path path = Paths.get("src", "springAnnotations");
+		File theFile = new File(path + "/fortune-data.txt");
 
 		System.out.println("Reading fortunes from file: " + theFile);
 		System.out.println("File exists: " + theFile.exists());
